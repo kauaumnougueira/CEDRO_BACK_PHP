@@ -9,17 +9,20 @@
 </head>
 <body>
     <div id="login">
-        <form action="" method="POST">
+        <form action="http://localhost/PHP-BACK-CEDRO/controller/login.php" method="POST">
             <div style="margin: 20px;">
-                <img src="imagens\cedro_logo.png" alt="cedro_logo" width="200px" height="90px">
+                <img src="view\img\cedro_logo.png" alt="cedro_logo" width="200px" height="90px">
             </div>
             <div style="margin: 10px;">
                 <label style="margin-right: 6px;">Usuário</label>
-                <input type="text">
+                <input type="text" name="usuario">
             </div>
             <div style="margin: 10px;">
                 <label style="margin-right: 18px;">Senha</label>
-                <input type="password">
+                <input type="password" name="senha">
+            </div>
+            <div>
+                <input type="submit" value="Entrar">
             </div>
             <div>
                 <p><a href="https://labcedro.com.br/" target="_blank">Não consegue logar? entre em contato com os laboratórios CEDRO</a></p>
