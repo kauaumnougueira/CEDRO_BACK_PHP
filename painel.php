@@ -13,56 +13,56 @@ include("controller\protecao.php");
     <title>Painel</title>
 </head>
 <body>
-    <header>
-        <div class="esquerda">
-            <div id="perfil" style="margin-bottom: 10px; cursor: pointer;" onclick="window.location.href = 'http://localhost/PHP-BACK-CEDRO/perfil.php'"></div>
-            <label>Perfil</label>
-        </div>
-        <div class="direita">
-            <div class="header"> 
-                <input type="text" name="pesquisa" class="inp_text" style="width: 300px">
-                <div class="image"></div>
-                <span class="material-symbols-outlined" style="cursor: pointer;"  onclick="search()">search</span>
-                <style>
-                    .material-symbols-outlined {
-                    font-variation-settings:
-                    'FILL' 0,
-                    'wght' 700,
-                    'GRAD' 0,
-                    'opsz' 48
-                    }
-                </style>
+    <div class="container">
+            <div class="header">
+                <div class="esquerda">
+                    <div id="perfil" style="margin-bottom: 10px; cursor: pointer;" onclick="window.location.href = 'http://localhost/PHP-BACK-CEDRO/perfil.php'"></div>
+                    <label>Perfil</label>
+                </div>
+                <div class="direita">
+                    <div class="header"> 
+                        <input type="text" name="pesquisa" class="inp_text" style="width: 300px">
+                        <div class="image"></div>
+                        <span class="material-symbols-outlined" style="cursor: pointer;"  onclick="search()">search</span>
+                        <style>
+                            .material-symbols-outlined {
+                            font-variation-settings:
+                            'FILL' 0,
+                            'wght' 700,
+                            'GRAD' 0,
+                            'opsz' 48
+                            }
+                        </style>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div>
-    </header>
-    <main>
-        <div id="ultimo_exame">
-                <div class="carousel carousel-center">
-                    <button class="prev">Anterior</button>
-                    <ul>
-                        <?php
-                            include("model\banco\conexao.php"); //mesmo banco
-                            $sql = "SELECT * FROM exames";
-                            $result = mysqli_query($mysqli, $sql);
+            <div class="main">
+                <div id="ultimo_exame">
+                    <div class="carousel carousel-center">
+                        <button class="prev">Anterior</button>
+                        <ul>
+                            <?php
+                                include("model\banco\conexao.php"); //mesmo banco
+                                $sql = "SELECT * FROM exames";
+                                $result = mysqli_query($mysqli, $sql);
 
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
-                                    echo "<li><img src='".$row['path']."'></li>";
+                                if(mysqli_num_rows($result) > 0){
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        echo "<li><img src='".$row['path']."'></li>";
+                                    }
+                                }else{
+                                    echo "nenhuma imagem encontrada";
                                 }
-                            }else{
-                                echo "nenhuma imagem encontrada";
-                            }
-                        ?>
-                            
-                    </ul>
+                            ?>
+                                
+                        </ul>
+                        <button class="next">Próximo</button>
+                    </div>
                     
                 </div>
-                <button class="next">Próximo</button>
             </div>
         </div>
-    </main>
+    </div>
     <script>
         //perfil
 
