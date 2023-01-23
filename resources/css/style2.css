@@ -1,0 +1,52 @@
+.container{
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.header{
+    margin-top: -30px;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+}
+
+.esquerda {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.direita {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#perfil{
+    background-color: #444444;
+    width: 120px;
+    height: 100px;
+    margin: 0;
+}
+
+.main{
+    display: flex;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    position: absolute;
+
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.carousel li {
+    width: auto;
+    height: auto;
+    float: left;
+    list-style-type: none;
+}
+
+.carousel li:not(:first-child) {
+    display: none;
+}
+
