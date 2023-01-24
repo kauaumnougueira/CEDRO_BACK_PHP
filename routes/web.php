@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PagesController::class, 'index']);
 
-route::post("/login", [PagesController::class, 'login']);
+Auth::routes();
+
+Route::get('/home', [PagesController::class, 'painel'])->name('home');

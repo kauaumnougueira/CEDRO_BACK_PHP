@@ -10,8 +10,7 @@ class PagesController extends Controller
         return view('index');
     }
 
-    public function login(){
-        return view('login');
+    public function painel(){
+        return view('painel');
     }
-
 }

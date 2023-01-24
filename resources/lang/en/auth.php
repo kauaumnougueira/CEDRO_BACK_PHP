@@ -12,8 +12,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
-    'failed' => 'These credentials do not match our records.',
+    'locale' => 'pt-BR',
+    //'failed' => 'These credentials do not match our records.',
+    'failed' => 'Essas credenciais não correspondem aos nossos registros.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
