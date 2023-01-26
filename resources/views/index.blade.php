@@ -9,10 +9,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body style=" background-color: #D9D9D9; color:#036F52;">
@@ -31,7 +31,7 @@
                             <input type="text" name="email" class="form-control shadow p-3 @error('email') is-invalid @enderror" id="inputUser" placeholder="Email" >
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ __($message) }}</strong>
+                                    <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
