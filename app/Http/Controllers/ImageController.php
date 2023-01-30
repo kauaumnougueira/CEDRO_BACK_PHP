@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Image;
+use Illuminate\Support\Facades\Auth;
 
-class ImageController extends Controller
-{
-    public function index($id){
-        $images = Image::where('id_user', $id)->get();
+class ImageController extends Controller{
+    public function index(){
+        //exames
+        $images = Image::where('id_user', Auth::user()->id)->get();
 
-        return view('images.index', compact('images'));
+        return view('painel', compact('images'));
     }
 }

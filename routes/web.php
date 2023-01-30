@@ -21,9 +21,13 @@ Route::get('/', [PagesController::class, 'index']);
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [PagesController::class, 'index'])->name('home');
-    Route::get('/painel', [PagesController::class, 'painel']);
-    Route::get('/images/{id}', [ImageController::class, 'index'])->name('images');
+    //se ja estiver logado redireciona para o painel
+    if(!null == Auth::user()){
+        Route::get('/login', [PagesController::class, 'painel']);
+    }
+    //Route::get('/painel', [PagesController::class, 'painel']); painel sem imagens
+    Route::get('/painel', [ImageController::class, 'index']);
+
 });
 
 
