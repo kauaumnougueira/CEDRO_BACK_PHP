@@ -57,6 +57,7 @@
                                 </li>
                             @endif -->
                         @else
+
                         @if (Route::getCurrentRoute()->getName() == 'perfil')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('painel') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -65,6 +66,13 @@
                             </li>
 
                         @else
+                        @if(Route::getCurrentRoute()->getName() !== 'painel')
+                        <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('painel') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ 'Painel' }}
+                                </a>
+                            </li>
+                        @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('perfil') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ strstr(Auth::user()->name, ' ', true) }}
@@ -90,7 +98,7 @@
                         <!--pisquisa-->
                         <form class="form-inline my-2 my-lg-0 w-50 mr-auto ml-auto" method="GET" action="{{ route('exame') }}">
                             <input class="form-control mr-sm-2 col-sm-8" type="search" placeholder="Pesquisar Exame" aria-label="Search" name="pesquisa">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                            <button class="btn btn-success my-2 my-sm-0" type="submit" style="background-color: #036F52; border-color:#036F52;">Pesquisar</button>
                         </form>
                     @endif
                 </div>
