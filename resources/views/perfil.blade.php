@@ -39,7 +39,7 @@
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Lista de exames</h6>
                       <!-- Adcionar link que acessa -->
                         @foreach($exames as $exame)
-                        <a href="{{ route('getImage') }}"><p>{{ $exame->nome }}</p></a>
+                        <a href="{{ route('exame', 'pesquisa='.$exame->nome) }}"><p>{{ $exame->nome }}</p></a>
                         @endforeach
                     </div>
                   </div>
