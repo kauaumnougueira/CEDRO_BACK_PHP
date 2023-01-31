@@ -16,7 +16,7 @@
                       <p class="text-secondary mb-1">Paciente</p>
                       <p class="text-muted font-size-sm">{{ Auth::user()->cidade }}</p>
                       <p>
-                        <div class="" aria-labelledby="navbarDropdown">
+                        <div class="">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
@@ -97,7 +97,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="{{ route('edit') }}">Edit</a>
+                        <a href="{{ route('edit') }}"> <input type="submit" value="Edit" class="btn btn-lg btn-success" style="background-color: #036F52; border: #036F52;"></a>
                     </div>
                   </div>
                 </div>
