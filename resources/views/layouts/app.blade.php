@@ -73,8 +73,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -86,6 +86,13 @@
                         @endif
                         @endguest
                     </ul>
+                    @if (Route::getCurrentRoute()->getName() == 'painel' || Route::getCurrentRoute()->getName() == 'exame')
+                        <!--pisquisa-->
+                        <form class="form-inline my-2 my-lg-0 w-50 mr-auto ml-auto" method="GET" action="{{ route('exame') }}">
+                            <input class="form-control mr-sm-2 col-sm-8" type="search" placeholder="Pesquisar Exame" aria-label="Search" name="pesquisa">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         </nav>

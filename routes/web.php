@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExamesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\UserController;
@@ -34,9 +35,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/painel', [ImageController::class, 'index'])->name('painel');
     Route::get('/perfil', [ImageController::class, 'exames'])->name('perfil');
     Route::get('/getImage', [ImageController::class, 'index'])->name('getImage'); //alterar para espaço cheio de exames
-    Route::get('/edit', [ImageController::class, 'edit'])->name('edit'); //edição
+    Route::get('/edit', [ImageController::class, 'edit'])->name('edit');
+
+    Route::get('/exame', [ExamesController::class, 'exame'])->name('exame');
     //POST
     Route::post('/update', [UserController::class, 'update'])->name('update');
+
 });
 
 
