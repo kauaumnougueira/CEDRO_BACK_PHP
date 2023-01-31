@@ -13,4 +13,8 @@ class PagesController extends Controller
     public function painel(){
         return view('painel');
     }
+
+    public function perfil(){
+        return view('perfil');
+    }
 }

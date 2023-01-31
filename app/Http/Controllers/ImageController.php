@@ -13,4 +13,10 @@ class ImageController extends Controller{
 
         return view('painel', compact('images'));
     }
+
+    public function exames(){
+        $exames = Image::where('id_user', Auth::user()->id)->get();
+        return view('perfil', ['exames' => $exames]);
+    }
+
 }
