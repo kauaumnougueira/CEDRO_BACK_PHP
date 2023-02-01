@@ -25,7 +25,10 @@
                         <div class="carousel-inner">
                         @foreach($images as $index => $image)
                             <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                <img src="{{ $image->path }}" class="d-block w-100 img-responsive m-auto" alt="{{ $image->nome }}">
+                                <h6 class="text-center">{{ $image->nome }}</h6>
+                                <a href="{{ route('exame', 'pesquisa='.$image->nome)}}">
+                                    <img src="{{ $image->path }}" class="d-block w-100 img-responsive m-auto" alt="{{ $image->nome }}">
+                                </a>
                             </div>
                         @endforeach
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,13 +32,16 @@ Route::middleware(['auth'])->group(function () {
     //GET
     //Route::get('/painel', [PagesController::class, 'painel']); painel sem imagens
 
-    Route::get('/login', [ImageController::class, 'index'])->name('login');
+   // Route::get('/login', [ImageController::class, 'index'])->name('login');
     Route::get('/painel', [ImageController::class, 'index'])->name('painel');
     Route::get('/perfil', [ImageController::class, 'exames'])->name('perfil');
     Route::get('/getImage', [ImageController::class, 'index'])->name('getImage'); //alterar para espaço cheio de exames
     Route::get('/edit', [ImageController::class, 'edit'])->name('edit');
-
     Route::get('/exame', [ExamesController::class, 'exame'])->name('exame');
+    Route::get('/download/{image}', function ($image) { //download
+        $path = storage_path().$image;
+        return Response::download($path);
+    })->name('download');
     //POST
     Route::post('/update', [UserController::class, 'update'])->name('update');
 
