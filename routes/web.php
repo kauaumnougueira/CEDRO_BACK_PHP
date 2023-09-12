@@ -42,9 +42,6 @@ Route::middleware(['auth'])->group(function () {
         $path = storage_path().$image;
         return Response::download($path);
     })->name('download');
-    Route::get('/teste', function(){
-        return view('teste');
-    });
     //POST
     Route::post('/update', [UserController::class, 'update'])->name('update');
 
